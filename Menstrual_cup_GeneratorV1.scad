@@ -1,6 +1,19 @@
 ///////////////////////////////////////////
-//////////////////////////////////////
-// see docs at https://en.m.wikibooks.org/wiki/OpenSCAD_User_Manual/Customizer
+/*         THE CRIMSON WAVE PROJECT       */
+/*                  2022                  */
+/*                Presents                */   
+/*                  THE                   */
+/*Parametric_Menstrual_cup_Mould_Generator*/
+///////////////////////////////////////////
+//featuring 
+//
+//Nose Cone OpenSCAD Library, 1.0
+//by ggoss
+//https://www.thingiverse.com/thing:2004511
+//Paraboloid OpenSCAD Script by Ablapo
+//https://www.thingiverse.com/thing:84564/files
+//design by Prospect3dlab https://www.thingiverse.com/thing:347
+// https://en.m.wikibooks.org/wiki/OpenSCAD_User_Manual/Customizer
 
 Top_part_width=50;
 Top_part_height=8;
