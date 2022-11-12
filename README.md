@@ -7,7 +7,7 @@ About us:
 Welcome to The Crimson Wave Project! We are an organisation, a group of people, who are working to help address period poverty, 
 while making sure we are as sustainable and eco-friendly as possible. 
 Period poverty is when someone can’t access the period products they need, because they can’t afford it. 
-This is a problem! For example in the UK, 1 in 10 people struggle with period poverty.
+This is a problem! In the UK, 1 in 10 people struggle with period poverty.
 Our project is going to help resolve this issue making menstrual cups affordable or even freely available and distributing them to people who are in need. 
 The sceam would possibly be that people who can afford the upfront cost can pay a little more to help those who can't. 
 We want to iterate on the current menstrual cups, disks, applicators and other periode products that are on the market,
