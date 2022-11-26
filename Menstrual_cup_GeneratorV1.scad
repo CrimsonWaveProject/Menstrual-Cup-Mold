@@ -20,26 +20,40 @@
 ///////////////////////////////////////////
 translate([ 10, -15, 0 ])
 {
-    Top_part();
+    difference(){
+    #Top_part(); 
+    drainage_canals();
+    }
+    difference(){
+    #Lip_base();
+    drainage_canals();
+        }
+   
 }
 
 translate([ 13, -8.5, 0 ])
 {
-    scale([ 1, .8, .9 ]) Lip();
+    scale([ 1, .8, .9 ]) #Lip();
 }
 rotate([90])
 {
     translate([ 35, 22.5, -30 ])
     {
-        scale([ Cup_width / 1.18, Cup_depth, Cup_height ]) Cup();
+        scale([ Cup_width / 1.18, Cup_depth, Cup_height ]) 
+        #Cup();
     }
 }
 difference()
 {
-#Mould_R();
-    translate([ Right_shift / 2.5, 0, 0 ]) Stem();
-    translate([ Right_shift / 1.9, 0, 0 ]) Lip();
-    translate([ Right_shift / 2.5, 0, 0 ]) Stem_Mod();
+Mould_R();
+    translate([ Right_shift / 2.5, 0, 0 ]) 
+    Stem();
+    translate([ Right_shift / 2.7, -5, 0 ])
+    Lip_base();
+    translate([ Right_shift / 2.4, 5, 0 ]) 
+    Lip();
+    translate([ Right_shift / 2.5, 0, 0 ]) 
+    Stem_Mod();
     rotate([90])
     {
         translate([ Right_shift, 25, -41 ])
@@ -50,9 +64,14 @@ difference()
 }
 difference()
 {
-#Mould_L();
+Mould_L();
     Stem();
-    Lip();
+    translate([ 0, -5, 0 ])
+    {
+    Lip_base();
+    }
+     translate([ 0, 5, 0 ]){
+    Lip();}
     Stem_Mod();
     rotate([90])
     {
@@ -76,7 +95,7 @@ Cup_width = .85;
 Cup_depth = .8;
 Cup_height = 2.9;
 Right_shift = 40;
-nof = 50; // number of fragments
+nof = 60; // number of fragments
 
 // Paraboloid OpenSCAD Script (parameters)
 /////////////////////////////////////////
@@ -116,9 +135,29 @@ Top_part()
     {
         translate([ 45, 45, -15.5 ]) cylinder(10, 3, 3);
     }
+    
 }
 module
-Cup()
+ drainage_canals()
+{
+    $fn = nof;
+    rotate([90]){
+        translate([6.5,23,-15.8]){
+    cylinder(20,1.3,1.3);
+     
+    
+        }
+    }
+     rotate([90]){
+        translate([43,23,-15.8]){
+    cylinder(20,1.3,1.3);
+     
+    
+        }
+    }
+}
+module
+Cup()hull()
 {
 
     translate([ 0, 0, -f * fc ])                     // center on focus
@@ -283,7 +322,10 @@ module
 Lip()
 {
     $fn = nof;
-    scale([ 1.5, 1.5, 1.7 ])
+    //base attachment lip
+    
+    //donut
+    scale([ 1.7, 1.7, 1.7 ])
     {
         rotate([90])
         {
@@ -295,6 +337,21 @@ Lip()
         }
     }
 }
+
+module
+Lip_base()
+{
+    $fn = nof;
+    difference(){
+    //base attachment lip
+    rotate([90,0,0]){
+        translate([25,23.2,-12.5]){
+   cylinder(5, 22.8,22.8);
+    }
+}
+    
+}
+}
 //////////////////////////////////////////////
 module
 Stem()
@@ -302,7 +359,7 @@ Stem()
     $fn = nof;
     translate([ 25, 80, 25 ]) rotate([90])
     {
-        cylinder(38, 2, 2);
+       cylinder(38, 2, 2);
     }
 }
 //////////////////////////////////////////////
