@@ -21,26 +21,23 @@
 translate([ 10, -15, 0 ])
 {
     difference(){
-    #Top_part(); 
+    Top_part(); 
     drainage_canals();
     }
     difference(){
-    #Lip_base();
+    Lip_base();
     drainage_canals();
         }
    
 }
 
-translate([ 13, -8.5, 0 ])
-{
-    scale([ 1, .8, .9 ]) #Lip();
-}
+
 rotate([90])
 {
     translate([ 35, 22.5, -30 ])
     {
         scale([ Cup_width / 1.18, Cup_depth, Cup_height ]) 
-        #Cup();
+        Cup();
     }
 }
 difference()
